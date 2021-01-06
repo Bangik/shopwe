@@ -11,7 +11,7 @@
   <table class="tabel-list">
     <tr class="baris-title">
       <th class="kolom-nomor">No</th>
-      <th class="kiri">Barang tes</th>
+      <th class="kiri">Barang</th>
       <th class="kiri">Kategori</th>
       <th class="kiri">Harga</th>
       <th class="tengah">Status</th>
