@@ -15,7 +15,7 @@ if (mysqli_num_rows($query) == 0) {
 
   $_SESSION['id'] = $row['user_id'];
   $_SESSION['name'] = $row['nama'];
-  $_SESSION['level'] = $row['profile'];
+  $_SESSION['level'] = $row['level'];
 
   header("Location: ".BASE_URL."index.php?page=profile&module=pesanan&action=list");
 }
