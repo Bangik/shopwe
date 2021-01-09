@@ -7,6 +7,7 @@
   $nama = isset($_SESSION['name']) ? $_SESSION['name'] : false;
   $level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
   $page = isset($_GET['page']) ? $_GET['page'] : false;
+  $kategori_id = isset($_GET['kategori_id']) ? $_GET['kategori_id'] : false;
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -45,7 +46,7 @@
           if (file_exists($filename)) {
             include_once($filename);
           }else {
-            echo "File tidak ada";
+            include_once("main.php");
           }
         ?>
       </div>
