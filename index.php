@@ -14,7 +14,10 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>asset/css/style.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>asset/css/style-slides2.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slidesjs/3.0/jquery.slides.min.js" integrity="sha512-TxlLXEZX6gqIhL0yu/40Aed5AJpP2DagJBE3cXgu1oLXoZ33TG3Na+I8Cdnb7KdM15Z5srcDIsbuGMBnESY+EQ==" crossorigin="anonymous"></script>
     <title>ShopWe</title>
   </head>
   <body>
@@ -55,4 +58,17 @@
       </div>
     </div>
   </body>
+  <script>
+    $(function() {
+      $('#slides').slidesjs({
+        height: 350,
+        play: {
+          active: true,
+          auto: true,
+          interval: 3000,
+          swap: true
+        }
+      });
+    });
+  </script>
 </html>
