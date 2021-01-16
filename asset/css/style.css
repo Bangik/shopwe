@@ -284,3 +284,17 @@ body{
 #detail-barang #keterangan{
   margin: 20px 0px;
 }
+.total-barang{
+  color: white;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: bold;
+  vertical-align: top;
+}
+.update-quantity{
+  width: 30px;
+  text-align: center;
+}
+.tabel-list tr{
+  border-bottom: 1px solid #1e5474;
+}
