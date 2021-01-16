@@ -32,7 +32,7 @@
         <td class='kiri'>$nama_barang</td>
         <td class='kiri'> <input type='text' name='$barang_id' value='$quantity' class='update-quantity'> </td>
         <td class='kanan'>".rupiah($harga)."</td>
-        <td class='kanan'>".rupiah($total)."</td>
+        <td class='kanan hapus_item'>".rupiah($total)."<a href='".BASE_URL."hapus-item.php?barang_id=$barang_id'>X</a> </td>
       </tr>";
       $no++;
     }
