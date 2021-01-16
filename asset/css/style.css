@@ -62,6 +62,18 @@ body{
   padding: 5px;
   box-sizing: border-box;
 }
+.element-form .element-span input[type="submit"] {
+  background: #1e5474;
+  border: none;
+  color: white;
+  padding: 7px 20px;
+  border-radius: 3px;
+  font-size: 9px;
+  cursor: pointer;
+}
+.element-form .element-span input[type="submit"]:hover{
+	background:orange;
+}
 .notif{
   background: #1e5475;
   color: white;
@@ -142,6 +154,9 @@ body{
 }
 .kiri{
   text-align: left;
+}
+.kanan {
+  text-align: right;
 }
 .tengah{
   text-align: center;
@@ -307,4 +322,37 @@ body{
   right: 0px;
   text-decoration: none;
   color: #1e5474;
+}
+#frame-button-keranjang a{
+  background: #1e5474;
+  color: white;
+  text-decoration: none;
+  padding: 7px 20px;
+  display: inline-block;
+  margin-top:15px;
+}
+#lanjut-belanja{
+  float: right;
+}
+#frame-data-pengiriman{
+  float: left;
+  width: 500px;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+#frame-data-detail{
+  float:left;
+  width: 500px;
+}
+#frame-form-pengiriman{
+  border: 1px solid grey;
+  padding: 25px;
+}
+#frame-detail-order{
+  border: 1px solid grey;
+}
+.label-data-pengiriman{
+  border:1px solid grey;
+  padding: 10px 7px;
+  margin:0px;
 }

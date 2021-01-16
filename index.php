@@ -8,7 +8,7 @@
   $level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
   $page = isset($_GET['page']) ? $_GET['page'] : false;
   $kategori_id = isset($_GET['kategori_id']) ? $_GET['kategori_id'] : false;
-  $keranjang = isset($_SESSION['keranjang']) ? $_SESSION['keranjang'] : false;
+  $keranjang = isset($_SESSION['keranjang']) ? $_SESSION['keranjang'] : array();
   $total_barang = count($keranjang);
 ?>
 <!DOCTYPE html>
