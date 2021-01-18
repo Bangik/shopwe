@@ -3,10 +3,12 @@
 </div>
 
 <?php
-    $no=1;
 
-    $queryBanner = mysqli_query($koneksi, "SELECT * FROM banner ORDER BY banner_id DESC");
-
+		$pagination = isset($_GET['pagination']) ? $_GET['pagination']:1;
+	  $data_per_halaman = 3;
+	  $start = ($pagination-1) * $data_per_halaman;
+    $queryBanner = mysqli_query($koneksi, "SELECT * FROM banner ORDER BY banner_id DESC LIMIT $start, $data_per_halaman");
+		$no=1+ $start;
     if(mysqli_num_rows($queryBanner) == 0)
     {
         echo "<h3>Saat ini belum ada banner di dalam database</h3>";
@@ -37,5 +39,7 @@
             }
 
         echo "</table>";
+				$query = "SELECT * FROM banner";
+			  paginations($query, $data_per_halaman, $pagination, "index.php?page=profile&module=banner&action=list");
     }
 ?>

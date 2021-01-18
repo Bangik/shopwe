@@ -3,7 +3,10 @@
 </div>
 
 <?php
-  $query_kategori = mysqli_query($koneksi, "SELECT * FROM kategori");
+  $pagination = isset($_GET['pagination']) ? $_GET['pagination']:1;
+  $data_per_halaman = 3;
+  $start = ($pagination-1) * $data_per_halaman;
+  $query_kategori = mysqli_query($koneksi, "SELECT * FROM kategori LIMIT $start, $data_per_halaman");
   if (mysqli_num_rows($query_kategori) == 0) {
     echo "<h3>Maaf, Data tidak ditemukan</h3>";
   }else {
@@ -16,7 +19,7 @@
       <th class="tengah">Aksi</th>
     </tr>
     <?php
-    $no = 1;
+    $no = 1 + $start;
     while($row = mysqli_fetch_assoc($query_kategori)){
     ?>
     <tr>
@@ -32,5 +35,7 @@
     ?>
   </table>
 <?php
+    $query = "SELECT * FROM kategori";
+    paginations($query, $data_per_halaman, $pagination, "index.php?page=profile&module=kategori&action=list");
   }
 ?>

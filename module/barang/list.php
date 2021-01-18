@@ -3,7 +3,10 @@
 </div>
 
 <?php
-  $query_barang = mysqli_query($koneksi, "SELECT barang.*, kategori.kategori FROM barang JOIN kategori on barang.kategori_id = kategori.kategori_id ORDER by nama_barang asc");
+  $pagination = isset($_GET['pagination']) ? $_GET['pagination']:1;
+  $data_per_halaman = 3;
+  $start = ($pagination-1) * $data_per_halaman;
+  $query_barang = mysqli_query($koneksi, "SELECT barang.*, kategori.kategori FROM barang JOIN kategori on barang.kategori_id = kategori.kategori_id ORDER by nama_barang asc LIMIT $start, $data_per_halaman");
   if (mysqli_num_rows($query_barang) == 0) {
     echo "<h3>Maaf, Data tidak ditemukan</h3>";
   }else {
@@ -18,7 +21,7 @@
       <th class="tengah">Aksi</th>
     </tr>
     <?php
-    $no = 1;
+    $no = 1+ $start;
     while($row = mysqli_fetch_assoc($query_barang)){
     ?>
     <tr>
@@ -36,5 +39,7 @@
     ?>
   </table>
 <?php
+  $query = "SELECT * FROM barang";
+  paginations($query, $data_per_halaman, $pagination, "index.php?page=profile&module=barang&action=list");
   }
 ?>

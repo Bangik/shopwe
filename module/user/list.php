@@ -1,8 +1,10 @@
 <?php
-    $no=1;
 
-    $queryAdmin = mysqli_query($koneksi, "SELECT * FROM user ORDER BY nama ASC");
-
+    $pagination = isset($_GET['pagination']) ? $_GET['pagination']:1;
+    $data_per_halaman = 3;
+    $start = ($pagination-1) * $data_per_halaman;
+    $queryAdmin = mysqli_query($koneksi, "SELECT * FROM user ORDER BY nama ASC LIMIT $start, $data_per_halaman");
+    $no=1+ $start;
     if(mysqli_num_rows($queryAdmin) == 0)
     {
         echo "<h3>Saat ini belum ada data user yang dimasukan</h3>";
@@ -38,5 +40,7 @@
 
         //AKHIR DARI TABLE
         echo "</table>";
+        $query = "SELECT * FROM user";
+        paginations($query, $data_per_halaman, $pagination, "index.php?page=profile&module=user&action=list");
     }
 ?>
