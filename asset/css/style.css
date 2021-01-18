@@ -332,6 +332,9 @@ body{
   margin-top:15px;
 }
 #lanjut-belanja{
+  float: left;
+}
+#lanjut-pesanan{
   float: right;
 }
 #frame-data-pengiriman{
