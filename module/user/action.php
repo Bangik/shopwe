@@ -1,10 +1,10 @@
 <?php
-    include("../../config/koneksi.php");
-    include("../../config/helper.php");
+  include("../../config/koneksi.php");
+  include("../../config/helper.php");
+  admin_only("user", $level)
+  $user_id = $_GET['user_id'];
 
-    $user_id = $_GET['user_id'];
-
-    $nama = $_POST['nama'];
+  $nama = $_POST['nama'];
 	$email = $_POST["email"];
 	$phone = $_POST["phone"];
 	$alamat = $_POST["alamat"];

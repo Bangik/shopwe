@@ -6,6 +6,7 @@
   }else {
     header("Location: ".BASE_URL."index.php?page=login");
   }
+  admin_only($module, $level);
 ?>
 <div class="page-profile-bg">
   <div class="menu-profile">

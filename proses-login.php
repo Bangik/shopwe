@@ -19,7 +19,7 @@ if (mysqli_num_rows($query) == 0) {
 
   if (isset($_SESSION['proses_pesanan'])) {
     unset($_SESSION['proses_pesanan']);
-    header("Location: ".BASE_URL."index.php?page=data_pemesanan");
+    header("Location: ".BASE_URL."data-pemesanan.html");
   }else {
     header("Location: ".BASE_URL."index.php?page=profile&module=pesanan&action=list");
   }

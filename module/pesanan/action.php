@@ -1,7 +1,7 @@
 <?php
 include("../../config/koneksi.php");
 include("../../config/helper.php");
-
+admin_only("pesanan", $level);
 session_start();
 
 $pesanan_id = $_GET['pesanan_id'];

@@ -1,7 +1,7 @@
 <?php
     include("../../config/koneksi.php");
     include("../../config/helper.php");
-
+    admin_only("kota", $level);
     $kota = $_POST['kota'];
     $tarif = $_POST['tarif'];
     $status = $_POST['status'];

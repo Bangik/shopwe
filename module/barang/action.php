@@ -1,6 +1,7 @@
 <?php
 include_once("../../config/helper.php");
 include_once("../../config/koneksi.php");
+admin_only("barang", $level);
 
 $kategori_id = $_POST['kategori_id'];
 $nama_barang = $_POST['nama_barang'];

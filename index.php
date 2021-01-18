@@ -36,11 +36,11 @@
                 echo "<a href='".BASE_URL."logout.php' class='link'> Logout</a>";;
               }else {
             ?>
-            <a href="<?php echo BASE_URL; ?>index.php?page=login" class="link">Login</a>
-            <a href="<?php echo BASE_URL; ?>index.php?page=register" class="link">Register</a>
+            <a href="<?php echo BASE_URL; ?>login.html" class="link">Login</a>
+            <a href="<?php echo BASE_URL; ?>register.html" class="link">Register</a>
             <?php } ?>
           </div>
-          <a href="<?php echo BASE_URL; ?>index.php?page=keranjang" class="btn-keranjang">
+          <a href="<?php echo BASE_URL; ?>keranjang.html" class="btn-keranjang">
             <img src="<?php echo BASE_URL;?>asset/img/cart.png" alt="logo" class="btn-img">
             <?php
               if ($total_barang != 0) {

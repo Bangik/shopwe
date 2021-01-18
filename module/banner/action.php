@@ -2,6 +2,8 @@
     include("../../config/koneksi.php");
     include("../../config/helper.php");
 
+    admin_only("banner", $level);
+
     $banner = $_POST['banner'];
     $link = $_POST['link'];
     $status = $_POST['status'];
