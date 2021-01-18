@@ -123,7 +123,7 @@ body{
 }
 .frame-tambah{
   margin-bottom: 10px;
-  text-align: right;
+  overflow: hidden;
 }
 .btn-action{
   background: #1e5475;
@@ -133,7 +133,8 @@ body{
   cursor: pointer;
   text-decoration: none;
   margin-right: 3px;
-  font-weight: 9px;
+  font-size: 9px;
+  display: block;
 }
 .btn-action:hover{
   background: orange;
@@ -393,4 +394,10 @@ ul.pagination li a:hover{
 ul.pagination li a.active{
   background: #1e5474;
   color: white;
+}
+.frame-tambah #right{
+  float:right;
+}
+.frame-tambah #left{
+  float:left;
 }

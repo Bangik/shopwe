@@ -1,12 +1,32 @@
 <div class="frame-tambah">
-  <a class="btn-action" href="<?php echo BASE_URL."index.php?page=profile&module=barang&action=form";?>">+ Tambah Barang</a>
+  <div id="left">
+    <form action="<?php echo BASE_URL."index.php"; ?>" method="get">
+      <input type="hidden" name="page" value="<?php echo $_GET['page']; ?>">
+      <input type="hidden" name="module" value="<?php echo $_GET['module']; ?>">
+      <input type="hidden" name="action" value="<?php echo $_GET['action']; ?>">
+      <input type="text" name="search">
+      <input type="submit" value="Search">
+    </form>
+  </div>
+  <div id="right">
+    <a class="btn-action" href="<?php echo BASE_URL."index.php?page=profile&module=barang&action=form";?>">+ Tambah Barang</a>
+  </div>
 </div>
 
 <?php
+  $search = isset($_GET['search']) ? $_GET['search']:false;
   $pagination = isset($_GET['pagination']) ? $_GET['pagination']:1;
   $data_per_halaman = 3;
   $start = ($pagination-1) * $data_per_halaman;
-  $query_barang = mysqli_query($koneksi, "SELECT barang.*, kategori.kategori FROM barang JOIN kategori on barang.kategori_id = kategori.kategori_id ORDER by nama_barang asc LIMIT $start, $data_per_halaman");
+
+  $where = "";
+  $search_url = "";
+  if ($search) {
+    $search_url = "&search=$search";
+    $where = "WHERE barang.nama_barang LIKE '%$search%'";
+  }
+
+  $query_barang = mysqli_query($koneksi, "SELECT barang.*, kategori.kategori FROM barang JOIN kategori on barang.kategori_id = kategori.kategori_id $where ORDER by nama_barang asc LIMIT $start, $data_per_halaman");
   if (mysqli_num_rows($query_barang) == 0) {
     echo "<h3>Maaf, Data tidak ditemukan</h3>";
   }else {
@@ -39,7 +59,7 @@
     ?>
   </table>
 <?php
-  $query = "SELECT * FROM barang";
-  paginations($query, $data_per_halaman, $pagination, "index.php?page=profile&module=barang&action=list");
+  $query = "SELECT * FROM barang $where";
+  paginations($query, $data_per_halaman, $pagination, "index.php?page=profile&module=barang&action=list$search_url");
   }
 ?>
